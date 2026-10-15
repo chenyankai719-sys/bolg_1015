@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}首頁 - 我的部落格{% endblock %}
+
+{% block content %}
+    <h1>最新文章</h1>
+    {% if posts %}
+        {% for post in posts %}
+            <div class="post-card">
+                <h2><a href="{{ url_for('post_detail', post_id=post.id) }}">{{ post.title }}</a></h2>
+                <p><small>作者：{{ post.author }}</small></p>
+                <p>{{ post.content[:100] }}...</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>目前沒有任何文章，趕快來發表第一篇吧！</p>
+    {% endif %}
+{% endblock %}

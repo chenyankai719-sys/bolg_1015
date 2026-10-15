@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}我的部落格{% endblock %}</title>
+    <style>
+        body { font-family: sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; line-height: 1.6; }
+        nav { margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #ddd; }
+        nav a { margin-right: 15px; text-decoration: none; color: #0066cc; }
+        .post-card { border: 1px solid #ddd; padding: 15px; margin-bottom: 15px; border-radius: 5px; }
+        form div { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input[type="text"], textarea { width: 100%; padding: 8px; box-sizing: border-box; }
+        textarea { height: 150px; }
+        button { padding: 10px 15px; background-color: #0066cc; color: white; border: none; border-radius: 3px; cursor: pointer; }
+        button:hover { background-color: #004499; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('index') }}">首頁</a>
+        <a href="{{ url_for('new_post') }}">發表文章</a>
+    </nav>
+    
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

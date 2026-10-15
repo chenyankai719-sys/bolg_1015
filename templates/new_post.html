@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}發表新文章 - 我的部落格{% endblock %}
+
+{% block content %}
+    <h1>發表新文章</h1>
+    <form action="{{ url_for('new_post') }}" method="POST">
+        <div>
+            <label for="title">文章標題：</label>
+            <input type="text" id="title" name="title" required>
+        </div>
+        <div>
+            <label for="author">作者：</label>
+            <input type="text" id="author" name="author" required>
+        </div>
+        <div>
+            <label for="content">文章內容：</label>
+            <textarea id="content" name="content" required></textarea>
+        </div>
+        <button type="submit">發布文章</button>
+    </form>
+    <p style="margin-top: 20px;"><a href="{{ url_for('index') }}">&larr; 返回首頁</a></p>
+{% endblock %}

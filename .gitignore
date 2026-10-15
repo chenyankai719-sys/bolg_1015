@@ -1,0 +1,18 @@
+# Python 暫存檔
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 虛擬環境
+venv/
+.venv/
+env/
+
+# SQLite 資料庫與實例資料夾
+*.db
+*.sqlite3
+instance/
+
+# 系統與環境變數檔案
+.DS_Store
+.env
